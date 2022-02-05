@@ -40,8 +40,12 @@ public class Sorts {
             swap(array, largest,lastUnsortedIndex);
         }
     }
+    /*********************** INSERTION SORT *************************/
+    public static void insertionSort(int[] array){
 
-    /*********************** SWAP *************************/
+    }
+
+    /*********************** SWAP ************************************/
     public static void swap(int[] array, int index, int nextIndex){
         if (index == nextIndex){
             return;
@@ -50,8 +54,6 @@ public class Sorts {
         array[index] = array[nextIndex];
         array[nextIndex] = tempArrayValue;
     }
-    
-    /***********************  *************************/
-    
-    
+
+
 }
