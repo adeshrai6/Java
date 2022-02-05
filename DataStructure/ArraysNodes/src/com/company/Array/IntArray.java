@@ -1,7 +1,5 @@
 package com.company.Array;
 
-import java.util.Arrays;
-
 public class IntArray implements Cloneable{
     private int [] data;
     private int manyItems;
@@ -120,21 +118,20 @@ public class IntArray implements Cloneable{
 
     public static IntArray shortArray(IntArray tempArray){
         int temp;
-        IntArray array = tempArray.clone();
         boolean isTrue = true;
         while (isTrue) {
             isTrue = false;
-            for (int i = 0; i < array.manyItems-1; i++) {
-                if (array.data[i] > array.data[i + 1]) {
-                    temp = array.data[i];
-                    array.data[i] = array.data[i + 1];
-                    array.data[i + 1] = temp;
+            for (int i = 0; i < tempArray.manyItems-1; i++) {
+                if (tempArray.data[i] > tempArray.data[i + 1]) {
+                    temp = tempArray.data[i];
+                    tempArray.data[i] = tempArray.data[i + 1];
+                    tempArray.data[i + 1] = temp;
                     isTrue = true;
                 }
 
             }
         }
-        return array;
+        return tempArray;
     }
 
     @Override

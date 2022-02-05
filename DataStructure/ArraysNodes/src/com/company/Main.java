@@ -110,7 +110,7 @@ public class Main {
         array.add(4);
 
         //toString() is redundant, but I'm checking toString method for IntArray
-        System.out.println("Array Add: " + array.toString());
+        System.out.println("Array Add: " + array);
 
 //        AddMany
         IntArray array1 = new IntArray();

@@ -1,7 +1,5 @@
 package com.company.Node;
 
-import com.company.Array.IntArray;
-
 public class IntLinkedBag implements Cloneable{
     private IntNode head;
     private int nodeCount;
@@ -94,20 +92,22 @@ public class IntLinkedBag implements Cloneable{
         return tempBag;
     }
 
-    public static IntLinkedBag shortBag(IntLinkedBag linkedBag){
-        int temp;
+    public static IntLinkedBag shortBag(IntLinkedBag tempBag){
+        int temp = tempBag.nodeCount;
+        int tempData;
         IntLinkedBag bag = new IntLinkedBag();
         boolean isTrue = true;
         while (isTrue) {
             isTrue = false;
-            for (IntNode cursor = linkedBag.head; cursor != null; cursor = cursor.getLink()) {
+            for (IntNode cursor = tempBag.head; cursor != null; cursor = cursor.getLink()) {
                 if (cursor.getData() > cursor.getLink().getData()) {
-                    bag.add(cursor.getData());
+                    tempData = cursor.getData();
+                    cursor.setData(cursor.getLink().getData());
                 }
 
             }
         }
-        return linkedBag;
+        return tempBag;
     }
 
     @Override
