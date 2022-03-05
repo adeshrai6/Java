@@ -23,20 +23,31 @@ public class Lottrey {
 
         Scanner scanner = new Scanner(System.in);
         List<Integer> pickedNumber = new ArrayList<>();
-        System.out.print("Please enter your number:");
 
         for (int i = 0; i < 6; i++) {
+            System.out.println("Your numbers are " + pickedNumber);
             while (true) {
-                String stringNumber = scanner.nextLine();
-                int pick = Integer.parseInt(stringNumber);
+                try {
+                    System.out.print("Please enter number between(1–49), this is your " + (i + 1) + " number: ");
+                    String stringNumber = scanner.nextLine();
 
-                if (pick > 0 && pick < 50) {
-                    pickedNumber.add(pick);
-                    break;
+                    int pick = Integer.parseInt(stringNumber);
+
+                    if (pick > 0 && pick < 50) {
+                        pickedNumber.add(pick);
+                        break;
+                    } else {
+                        System.out.println(pick + " is not between 1–49");
+                    }
+                }catch (NumberFormatException e){
+                    System.out.println("It's not number");
                 }
             }
         }
+        System.out.println("The winning numbers were: " + winningNumbers);
+        System.out.println("Your numbers are: " + pickedNumber);
 
+        System.out.println("Your match numbers are " + pickedNumber.retainAll(winningNumbers));
 
     }
 }
