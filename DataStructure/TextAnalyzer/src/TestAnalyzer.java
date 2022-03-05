@@ -36,7 +36,7 @@ public class TestAnalyzer {
                 scanner.next();
                 wordCount++;
             }
-        }catch (FileNotFoundException e){
+            }catch (FileNotFoundException e){
             System.out.println("The name of file is not correct.");
         }
 
