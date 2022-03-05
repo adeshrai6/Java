@@ -19,7 +19,7 @@ public class Lottrey {
             }
 
         }
-        System.out.println(winningNumbers);
+//        System.out.println(winningNumbers);
 
         Scanner scanner = new Scanner(System.in);
         List<Integer> pickedNumber = new ArrayList<>();
@@ -47,7 +47,14 @@ public class Lottrey {
         System.out.println("The winning numbers were: " + winningNumbers);
         System.out.println("Your numbers are: " + pickedNumber);
 
-        System.out.println("Your match numbers are " + pickedNumber.retainAll(winningNumbers));
+        pickedNumber.retainAll(winningNumbers);
+        System.out.println("Your match numbers are " + pickedNumber);
+
+        if(pickedNumber.containsAll(winningNumbers)){
+            System.out.println("Holly carp! you won :)");
+        }else {
+            System.out.println("Sorry you didn't win, you matched " + pickedNumber.size() + " number.");
+        }
 
     }
 }
