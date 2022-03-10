@@ -24,8 +24,6 @@ public class MovieCatalogResource{
         RestTemplate restTemplate = new RestTemplate();
 
         List<Rating> ratings = Arrays.asList(       
-             
-
             new Rating("1234", 4),
             new Rating("4567", 5)
         );
