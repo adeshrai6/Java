@@ -3,6 +3,9 @@ package io.adesh.moviecatalogservice.resources;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import io.adesh.moviecatalogservice.models.CatalogItem;
+
 import java.util.List;
 import java.util.Collections;
 

@@ -1,4 +1,4 @@
-package io.adesh.moviecatalogservice.resources;
+package io.adesh.moviecatalogservice.models;
 
 public class CatalogItem {
     private String name;
