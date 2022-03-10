@@ -10,7 +10,7 @@ import io.adesh.ratingsdataservice.models.Rating;
 @RequestMapping("/ratingsdata")
 public class RatingsDataResource {
     
-    @RequestMapping("/{ratingsdata}")
+    @RequestMapping("/{movieId}")
     public Rating getRating(@PathVariable("movieId") String movieId){
         return new Rating(movieId, 4);
     }

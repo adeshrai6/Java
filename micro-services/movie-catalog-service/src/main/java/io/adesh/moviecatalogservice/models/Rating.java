@@ -2,11 +2,11 @@ package io.adesh.moviecatalogservice.models;
 
 public class Rating {
     private String movieId;
-    private int rating;
+    private int ratings;
 
     public Rating(String movieId, int rating){
         this.movieId = movieId;
-        this.rating = rating;
+        this.ratings = rating;
     }
 
     public String getMovieId(){
@@ -17,11 +17,11 @@ public class Rating {
     }
 
     public int getRating(){
-        return rating;
+        return ratings;
     }
 
     public void setRating(int rating){
-        this.rating = rating;
+        this.ratings = rating;
     }
 
 }
