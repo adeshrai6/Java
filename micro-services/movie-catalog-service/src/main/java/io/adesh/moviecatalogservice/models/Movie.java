@@ -1,4 +1,4 @@
-package io.adesh.movieinfoservice.models;
+package io.adesh.moviecatalogservice.models;
 
 
 public class Movie {
