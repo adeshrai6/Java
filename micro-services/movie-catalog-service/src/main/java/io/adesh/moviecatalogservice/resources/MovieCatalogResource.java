@@ -28,10 +28,10 @@ public class MovieCatalogResource{
             new Rating("4567", 5)
         );
 
-        return ratings.stream().map(mapper -> {
+        return ratings.stream().map(rate -> {
                     
-        Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + mapper.getMovieId(), Movie.class);
-        return new CatalogItem(movie.getName(), "Desc", mapper.getRating());
+        Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rate.getMovieId(), Movie.class);
+        return new CatalogItem(movie.getName(), "Desc", rate.getRating());
         })
         .collect(Collectors.toList());
 
