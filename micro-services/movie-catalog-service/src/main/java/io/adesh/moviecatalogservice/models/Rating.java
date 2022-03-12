@@ -3,6 +3,9 @@ package io.adesh.moviecatalogservice.models;
 public class Rating {
     private String movieId;
     private int ratings;
+    public Rating(){
+        
+    }
 
     public Rating(String movieId, int rating){
         this.movieId = movieId;
