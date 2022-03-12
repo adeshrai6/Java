@@ -29,22 +29,19 @@ public class MovieCatalogResource{
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId, String description, int rating){
         
 
-        List<Rating> ratings = Arrays.asList(       
-            new Rating("1234", 4),
-            new Rating("4567", 5)
-        );
+        List<Rating> ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/foo" + userId, );
 
         return ratings.stream().map(rate -> {
                     
-            // Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rate.getMovieId(), Movie.class);
+            Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rate.getMovieId(), Movie.class);
 
 
-            Movie movie = webClinentBuilder.build()
-                    .get()
-                    .uri("http://localhost:8082/movies/" + rate.getMovieId())
-                    .retrieve()
-                    .bodyToMono(Movie.class)
-                    .block();
+            // Movie movie = webClinentBuilder.build()
+            //         .get()
+            //         .uri("http://localhost:8082/movies/" + rate.getMovieId())
+            //         .retrieve()
+            //         .bodyToMono(Movie.class)
+            //         .block();
 
             return new CatalogItem(movie.getName(), "Desc", rate.getRating());
         })
