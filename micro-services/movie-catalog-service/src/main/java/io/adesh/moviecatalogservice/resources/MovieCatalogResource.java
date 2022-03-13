@@ -10,6 +10,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import io.adesh.moviecatalogservice.models.CatalogItem;
 import io.adesh.moviecatalogservice.models.Movie;
 import io.adesh.moviecatalogservice.models.Rating;
+import io.adesh.moviecatalogservice.models.UserRating;
 
 import java.util.List;
 import java.util.Arrays;
@@ -29,25 +30,23 @@ public class MovieCatalogResource{
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId, String description, int rating){
         
 
-        List<Rating> ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/foo" + userId, );
+        UserRating ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/foo" + userId, UserRating.class);
 
-        return ratings.stream().map(rate -> {
+        return ratings.getUserRating().stream().map(rate -> {
                     
             Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rate.getMovieId(), Movie.class);
-
-
-            // Movie movie = webClinentBuilder.build()
-            //         .get()
-            //         .uri("http://localhost:8082/movies/" + rate.getMovieId())
-            //         .retrieve()
-            //         .bodyToMono(Movie.class)
-            //         .block();
-
+            
             return new CatalogItem(movie.getName(), "Desc", rate.getRating());
         })
         .collect(Collectors.toList());
-
+        
     } 
-
+    
+    // Movie movie = webClinentBuilder.build()
+    //         .get()
+    //         .uri("http://localhost:8082/movies/" + rate.getMovieId())
+    //         .retrieve()
+    //         .bodyToMono(Movie.class)
+    //         .block();
     
 }
