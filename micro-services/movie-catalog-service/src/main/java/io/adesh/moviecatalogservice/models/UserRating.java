@@ -3,14 +3,14 @@ package io.adesh.moviecatalogservice.models;
 import java.util.List;
 
 public class UserRating {
-    private List<Rating> userRating;
+    private List<Rating> userRatings;
 
     public List<Rating> getUserRating() {
-        return userRating;
+        return userRatings;
     }
 
     public void setUserRating(List<Rating> userRating) {
-        this.userRating = userRating;
+        this.userRatings = userRating;
     }
     
 }
