@@ -2,6 +2,11 @@ public class Sorts {
     public static void main(String[] args) {
         int[] intArray = { 20, 21, 13, 4, 5, -2, -20, 1};
 
+//        Rotate Array in 4th place
+        rotateArray(intArray,4);
+        print(intArray);
+        System.out.println();
+
 //        BUBBLE SORT
         System.out.println("BubbleShort: " );
         bubbleShort(intArray);
@@ -19,15 +24,6 @@ public class Sorts {
         insertionSort(intArray);
         print(intArray);
 
-        int[][] array = new int[10][20];
-
-        for (int i = 0; i < array.length; i++) {
-            System.out.print("{");
-            for (int j = 0; j < array[i].length ; j++) {
-                System.out.print("(" + i + "," + j + ")");
-            }
-            System.out.println("}");
-        }
     }
 
     /*********************** BUBBLE SHORT *************************/
@@ -77,10 +73,25 @@ public class Sorts {
         array[nextIndex] = tempArrayValue;
     }
 
-    public static void print(int [] array){
-        for (int j : array) {
-            System.out.println(j);
+    public static void rotateArray(int[] arrayToRotate, int placeToRotate){
+        int tempPlaceToRotate = placeToRotate;
+        int ii;
+        while (placeToRotate > 0){
+            int lastNumber = arrayToRotate[arrayToRotate.length-1];
+            for (ii = arrayToRotate.length -1 ; ii > 0; ii--) {
+                arrayToRotate[ii] = arrayToRotate[ii -1];
+            }
+            arrayToRotate[ii] = lastNumber;
+            placeToRotate--;
         }
     }
+
+    public static void print(int [] array){
+        for (int j : array) {
+            System.out.print(j + ", ");
+        }
+    }
+
+
 
 }
