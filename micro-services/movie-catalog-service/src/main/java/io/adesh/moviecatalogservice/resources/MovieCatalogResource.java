@@ -23,6 +23,7 @@ public class MovieCatalogResource{
     @Autowired
     private RestTemplate restTemplate;
     
+
     @Autowired
     private WebClient.Builder webClinentBuilder;
 
