@@ -1,13 +1,23 @@
+import java.util.Random;
+
 public class Sorts {
     public static void main(String[] args) {
         int[] intArray = { 20, 21, 13, 4, 5, -2, -20, 1};
+        int[] testArray = new int[10];
 
-//        Rotate Array in 4th place
+
+//      Rotate Array in 4th place
         rotateArray(intArray,4);
         print(intArray);
         System.out.println();
 
+//        MERGE SORT
+        System.out.println("Merge Sort");
+        mergeSort(randomNumber(testArray));
+        print(testArray);
+
 //        BUBBLE SORT
+        System.out.println();
         System.out.println("BubbleShort: " );
         bubbleShort(intArray);
         print(intArray);
@@ -25,6 +35,63 @@ public class Sorts {
         print(intArray);
 
     }
+
+    /*********************** MERGE SHORT *************************/
+    public static void mergeSort(int[] array){
+
+        if(array.length < 2){
+            return;
+        }
+
+        int midIndex = array.length/2; //Dividing array in half
+        int[] leftArray = new int[midIndex];
+        int[] rightArray = new int[array.length - midIndex];
+
+        for (int i = 0; i < midIndex; i++) {
+            leftArray[i] = array[i];
+        }
+
+        for (int i = midIndex; i < array.length; i++) {
+            rightArray[i - midIndex] = array[i]; //Starting with first index of right array but getting middle index from original index
+        }
+
+        mergeSort(leftArray);
+        mergeSort(rightArray);
+        merge(array, leftArray, rightArray);
+
+    }
+
+    public static void merge(int[] array, int[] leftHalf, int[] rightHalf){
+        int leftIncrement = 0;
+        int rightIncrement = 0;
+        int arrayIncrement = 0;
+
+        while (leftIncrement < leftHalf.length && rightIncrement < rightHalf.length){
+            if(leftHalf[leftIncrement] <= rightHalf[rightIncrement]){
+                array[arrayIncrement] = leftHalf[leftIncrement]; //Put element of left array to large array
+                leftIncrement++; //Go to next element of left array
+            }else {
+                array[arrayIncrement] = rightHalf[rightIncrement]; //Put element of right array to large array
+                rightIncrement++; //Go to next element of right array
+            }
+            arrayIncrement++; //increment large array
+
+        }
+
+        while (leftIncrement < leftHalf.length){
+            array[arrayIncrement] = leftHalf[leftIncrement]; //Put remaining element of left array to large array
+            leftIncrement++;
+            arrayIncrement++;
+        }
+
+        while (rightIncrement < rightHalf.length){
+            array[arrayIncrement] = rightHalf[rightIncrement];
+            rightIncrement++;
+            arrayIncrement++;
+        }
+
+    }
+
 
     /*********************** BUBBLE SHORT *************************/
     public static void bubbleShort(int[] array){
@@ -73,6 +140,7 @@ public class Sorts {
         array[nextIndex] = tempArrayValue;
     }
 
+    /*********************** Rotate Array ************************************/
     public static void rotateArray(int[] arrayToRotate, int placeToRotate){
         int tempPlaceToRotate = placeToRotate;
         int ii;
@@ -86,12 +154,20 @@ public class Sorts {
         }
     }
 
+    /*********************** Print Array ************************************/
     public static void print(int [] array){
         for (int j : array) {
             System.out.print(j + ", ");
         }
     }
 
+    /*********************** Random Number ************************************/
+    public static int[] randomNumber(int[] array){
+        for (int i = 0; i < array.length; i++){
+            array[i] = (int) (Math.random() * 100000 + 1);
+        }
+        return array;
+    }
 
 
 }
