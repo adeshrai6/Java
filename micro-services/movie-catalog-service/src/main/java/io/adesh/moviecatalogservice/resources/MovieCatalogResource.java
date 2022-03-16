@@ -31,11 +31,11 @@ public class MovieCatalogResource{
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId, String description, int rating){
         
 
-        UserRating ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/foo" + userId, UserRating.class);
+        UserRating ratings = restTemplate.getForObject("http://ratings-data-service/ratingsdata/foo" + userId, UserRating.class);
 
         return ratings.getUserRating().stream().map(rate -> {
                     
-            Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rate.getMovieId(), Movie.class);
+            Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rate.getMovieId(), Movie.class);
             
             return new CatalogItem(movie.getName(), "Desc", rate.getRating());
         })

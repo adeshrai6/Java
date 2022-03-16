@@ -9,6 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class MovieCatalogServiceApplication {
 
 	@Bean
+
 	public RestTemplate getRestTemplet(){
 		return new RestTemplate();
 	}
