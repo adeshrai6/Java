@@ -19,20 +19,20 @@ public class Sorts {
 //        BUBBLE SORT
         System.out.println();
         System.out.println("BubbleShort: " );
-        bubbleShort(intArray);
-        print(intArray);
+        bubbleShort(randomNumber(testArray));
+        print(testArray);
 
 //        SELECTION SORT
         System.out.println();
         System.out.println("SelectionShort");
-        selectionShort(intArray);
-        print(intArray);
+        selectionShort(randomNumber(testArray));
+        print(testArray);
 
 
         System.out.println();
         System.out.println("Insertion Sort:");
-        insertionSort(intArray);
-        print(intArray);
+        insertionSort(randomNumber(testArray));
+        print(testArray);
 
     }
 
@@ -85,7 +85,7 @@ public class Sorts {
         }
 
         while (rightIncrement < rightHalf.length){
-            array[arrayIncrement] = rightHalf[rightIncrement];
+            array[arrayIncrement] = rightHalf[rightIncrement]; //Put remaining element of right array to large array
             rightIncrement++;
             arrayIncrement++;
         }
