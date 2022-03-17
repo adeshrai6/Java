@@ -92,6 +92,23 @@ public class Sorts {
 
     }
 
+    /*********************** BINARY SHORT *************************/
+    public static boolean binarySearch(int[] array, int value){
+        int left = 0;
+        int right = array.length-1 ;
+        int mid = (int)array.length/2;
+        while (left <= right) {
+            if (array[mid] == value) {
+              return true;
+            }else if(value > array[mid]){
+                left = mid + 1;
+            }else {
+                right = mid - 1;
+            }
+        }
+        return false;
+    }
+
 
     /*********************** BUBBLE SHORT *************************/
     public static void bubbleShort(int[] array){
