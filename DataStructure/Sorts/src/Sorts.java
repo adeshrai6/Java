@@ -1,4 +1,3 @@
-import java.util.Random;
 
 public class Sorts {
     public static void main(String[] args) {
@@ -12,8 +11,8 @@ public class Sorts {
         System.out.println();
 
 //        BINARY SEARCH
-        System.out.println(binarySearch(intArray,5));
-        System.out.println(binarySearch(intArray,1));
+//        System.out.println(binarySearch(intArray,5));
+//        System.out.println(binarySearch(intArray,1));
 
 
 //        MERGE SORT
@@ -101,7 +100,7 @@ public class Sorts {
     public static boolean binarySearch(int[] array, int value){
         int left = 0;
         int right = array.length-1 ;
-        int mid = (int)array.length/2;
+        int mid = array.length/2;
         while (left <= right) {
             if (array[mid] == value) {
               return true;
