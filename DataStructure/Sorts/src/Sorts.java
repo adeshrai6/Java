@@ -13,6 +13,8 @@ public class Sorts {
 
 //        BINARY SEARCH
         System.out.println(binarySearch(intArray,5));
+        System.out.println(binarySearch(intArray,1));
+
 
 //        MERGE SORT
         System.out.println("Merge Sort");
