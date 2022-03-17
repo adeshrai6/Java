@@ -11,6 +11,9 @@ public class Sorts {
         print(intArray);
         System.out.println();
 
+//        BINARY SEARCH
+        System.out.println(binarySearch(intArray,5));
+
 //        MERGE SORT
         System.out.println("Merge Sort");
         mergeSort(randomNumber(testArray));
