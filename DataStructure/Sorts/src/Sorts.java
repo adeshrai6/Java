@@ -16,9 +16,7 @@ public class Sorts {
         System.out.println();
 
 //        BINARY SEARCH
-//        System.out.println(binarySearch(intArray,5));
-//        System.out.println(binarySearch(intArray,1));
-
+        System.out.println("Binary Search: 5 in { 20, 21, 13, 4, 5, -2, -20, 1}: " + binarySearch(intArray,5));
 
 //        MERGE SORT
         System.out.print("Merge Sort: ");
@@ -103,19 +101,20 @@ public class Sorts {
 
     /*********************** BINARY SHORT *************************/
     public static boolean binarySearch(int[] array, int value){
+        boolean isTrue = false;
         int left = 0;
         int right = array.length-1 ;
-        int mid = array.length/2;
         while (left <= right) {
+            int mid = left + ((right - left)/2);
             if (array[mid] == value) {
-              return true;
-            }else if(value > array[mid]){
-                left = mid + 1;
-            }else {
+              isTrue = true;
+            }else if(value < array[mid]){
                 right = mid - 1;
+            }else {
+                left = mid + 1;
             }
         }
-        return false;
+        return isTrue;
     }
 
 
