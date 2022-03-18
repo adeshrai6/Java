@@ -175,6 +175,20 @@ public class Sorts {
         }
     }
 
+    /*********************** PALINDROME ************************************/
+    public static boolean isPalindrome(int[] array, int start, int end){
+        if(start >= end){
+            return true;
+        }
+        else if(array[start] != array[end]){
+            return false;
+        }
+        else {
+            return isPalindrome(array, start++, end--);
+        }
+
+    }
+
     /*********************** Print Array ************************************/
     public static void print(int [] array){
         for (int j : array) {
