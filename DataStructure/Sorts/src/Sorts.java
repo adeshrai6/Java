@@ -5,8 +5,13 @@ public class Sorts {
         int[] testArray = new int[10];
 
 
+        System.out.print("Original Array: ");
+        print(intArray);
+        System.out.println();
+
 //      Rotate Array in 4th place
         rotateArray(intArray,4);
+        System.out.print("Rotated Array: ");
         print(intArray);
         System.out.println();
 
@@ -16,25 +21,25 @@ public class Sorts {
 
 
 //        MERGE SORT
-        System.out.println("Merge Sort");
+        System.out.print("Merge Sort: ");
         mergeSort(randomNumber(testArray));
         print(testArray);
 
 //        BUBBLE SORT
         System.out.println();
-        System.out.println("BubbleShort: " );
+        System.out.print("BubbleShort: " );
         bubbleShort(randomNumber(testArray));
         print(testArray);
 
 //        SELECTION SORT
         System.out.println();
-        System.out.println("SelectionShort");
+        System.out.print("SelectionShort: ");
         selectionShort(randomNumber(testArray));
         print(testArray);
 
 
         System.out.println();
-        System.out.println("Insertion Sort:");
+        System.out.print("Insertion Sort: ");
         insertionSort(randomNumber(testArray));
         print(testArray);
 
@@ -161,9 +166,8 @@ public class Sorts {
         array[nextIndex] = tempArrayValue;
     }
 
-    /*********************** Rotate Array ************************************/
+    /*********************** ROTATE ARRAY ************************************/
     public static void rotateArray(int[] arrayToRotate, int placeToRotate){
-        int tempPlaceToRotate = placeToRotate;
         int ii;
         while (placeToRotate > 0){
             int lastNumber = arrayToRotate[arrayToRotate.length-1];
