@@ -1,16 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.login.LoginController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+    <Label alignment="CENTER" layoutX="155.0" layoutY="266.0" prefHeight="25.0" prefWidth="314.0" text="Real Estate Listings" textFill="#125115" AnchorPane.bottomAnchor="562.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="52.0">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Label>
+    <Label fx:id="minimumPrice" alignment="CENTER" layoutX="266.0" layoutY="120.0" prefHeight="25.0" prefWidth="122.0" text="Minimum Price:" AnchorPane.bottomAnchor="496.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="343.0" AnchorPane.topAnchor="119.0">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Label>
+    <TextField fx:id="minimumInput" layoutX="266.0" layoutY="120.0" prefHeight="26.0" prefWidth="200.0" AnchorPane.bottomAnchor="496.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="118.0" />
+    <Label fx:id="maximumPrice" alignment="CENTER" layoutX="135.0" layoutY="170.0" prefHeight="25.0" prefWidth="122.0" text="Maximum Price:" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="343.0" AnchorPane.topAnchor="170.0">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Label>
+    <TextField fx:id="maximumInput" layoutX="266.0" layoutY="170.0" prefHeight="26.0" prefWidth="200.0" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="169.0" />
+    <Label fx:id="minimumArea" alignment="CENTER" layoutX="135.0" layoutY="220.0" prefHeight="25.0" prefWidth="122.0" text="Minimum Area:" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="343.0">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Label>
+    <TextField fx:id="minimumAreaInput" layoutX="266.0" layoutY="220.0" prefHeight="26.0" prefWidth="200.0" AnchorPane.bottomAnchor="394.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="220.0" />
+    <Label fx:id="maximumArea" alignment="CENTER" layoutX="135.0" layoutY="270.0" prefHeight="25.0" prefWidth="122.0" text="Maximum Area:" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="343.0">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Label>
+    <TextField fx:id="maximumAreaInput" layoutX="266.0" layoutY="270.0" prefHeight="26.0" prefWidth="200.0" AnchorPane.bottomAnchor="344.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="270.0" />
+    <Label fx:id="minBeds" alignment="CENTER" layoutX="135.0" layoutY="320.0" prefHeight="25.0" prefWidth="122.0" text="Minimum Beds" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="343.0">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Label>
+    <TextField fx:id="minBedsInput" layoutX="266.0" layoutY="320.0" prefHeight="26.0" prefWidth="200.0" AnchorPane.bottomAnchor="294.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="320.0" />
+    <Label fx:id="maxBeds" alignment="CENTER" layoutX="135.0" layoutY="370.0" prefHeight="25.0" prefWidth="122.0" text="Maximum Beds:" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="343.0">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Label>
+    <TextField fx:id="maxBedsInput" layoutX="266.0" layoutY="370.0" prefHeight="26.0" prefWidth="200.0" AnchorPane.bottomAnchor="244.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="370.0" />
+    <Label fx:id="chosenHome" alignment="CENTER" layoutX="135.0" layoutY="421.0" prefHeight="25.0" prefWidth="122.0" text="Chosen Home:" AnchorPane.bottomAnchor="194.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="343.0" AnchorPane.topAnchor="421.0">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Label>
+    <TextField fx:id="chosenOutput" layoutX="266.0" layoutY="420.0" prefHeight="26.0" prefWidth="200.0" AnchorPane.bottomAnchor="194.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="420.0" />
+    <Button fx:id="findBtn" layoutX="82.0" layoutY="493.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" text="Find my dream house!" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="372.0" AnchorPane.topAnchor="493.0" />
+    <Button layoutX="266.0" layoutY="493.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="220.0" text="Not my dream -- find me another!" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="493.0" />
+    <Button fx:id="reset" layoutX="227.0" layoutY="555.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" text="Reset" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="227.0" AnchorPane.topAnchor="555.0" />
+</children>
+</fx:root>
