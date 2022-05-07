@@ -9,6 +9,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -41,21 +42,22 @@ public class JavaFxController implements Initializable {
     ObservableList<User> list = FXCollections.observableArrayList();
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 //                new PropertyValueFactory<User, String>("name") etc
-            name.setCellValueFactory(new PropertyValueFactory<>("name"));
-            age.setCellValueFactory(new PropertyValueFactory<>("age"));
-            animals.setCellValueFactory(new PropertyValueFactory<>("animal"));
-            table.setItems(list);
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        age.setCellValueFactory(new PropertyValueFactory<>("age"));
+        animals.setCellValueFactory(new PropertyValueFactory<>("animal"));
+        table.setItems(list);
     }
+
     @FXML
     void nameChange() {
         String myName = nameIn.getText();
         int myAge = Integer.parseInt(ageIn.getText());
         String myAnimal = animalIn.getText();
-        User user = new User(myName,myAge, myAnimal);
-         list.add(user);
-         table.setItems(list);
+        User user = new User(myName, myAge, myAnimal);
+        list.add(user);
+        table.setItems(list);
 
     }
 

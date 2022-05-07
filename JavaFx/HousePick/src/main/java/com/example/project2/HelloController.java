@@ -93,7 +93,7 @@ public class HelloController {
     }
 
     @FXML
-    void findNext(ActionEvent event){
+    void findNext(ActionEvent event) {
         int minPrice = Integer.parseInt(minimumPriceInput.getText());
         int maxPrice = Integer.parseInt(maximumPriceInput.getText());
         int minBed = Integer.parseInt(minBedsInput.getText());

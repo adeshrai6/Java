@@ -17,7 +17,7 @@ public class HouseList {
      *      the name of the file where the list of House data is stored
      *
      **********************************************************************/
-    public HouseList(String fileName){
+    public HouseList(String fileName) {
         Scanner scanner;
         String tempAddress;
         int tempPrice;
@@ -25,7 +25,7 @@ public class HouseList {
         int tempBeds;
         try {
             scanner = new Scanner(new File(fileName)); //Read file using scanner
-            while (scanner.hasNext()){
+            while (scanner.hasNext()) {
                 tempAddress = scanner.next(); //get address form data
                 tempPrice = scanner.nextInt(); //get price from data
                 tempArea = scanner.nextInt(); //git area from data
@@ -34,7 +34,7 @@ public class HouseList {
                 housesList.add(new House(tempAddress, tempPrice, tempArea, tempBeds)); // Put house in house list
             }
             scanner.close();
-        }catch (FileNotFoundException fileNotFoundException){
+        } catch (FileNotFoundException fileNotFoundException) {
             System.out.println("The name of the file is not found");
         }
     }
@@ -44,7 +44,7 @@ public class HouseList {
      * @return
      *  the information like minimum-maximum Price, minimum-maximum Area, minimum-maximum Beds about House
      ***********************************************************/
-    public String getHouses(Requirement r){
+    public String getHouses(Requirement r) {
         return "Minimum Price: " + r.getMinimumPrice() + "Maximum Price: " + r.getMaximumPrice() + "Minimum Area: " + r.getMinimumArea()
                 + "Maximum Area: " + r.getMaximumArea() + "Minimum Beds: " + r.getMinimumNumberOfBeds() + "Maximum Beds: " + r.getMaximumNumberOfBeds();
     }
@@ -54,10 +54,10 @@ public class HouseList {
      * @param r
      *      the requirement of the house like minimum-maximum Price, minimum-maximum Area, minimum-maximum Beds about House.
      ***********************************************************/
-    public String printHouses(Requirement r){
+    public String printHouses(Requirement r) {
         String house = " ";
         for (int i = 0; i < housesList.size(); i++) {
-            if(housesList.get(i).satisfies(r)) // check if houseList satisfies given requirement
+            if (housesList.get(i).satisfies(r)) // check if houseList satisfies given requirement
             {
                 house = housesList.get(i) + " ";// print every house that is satisfies given requirement
             }
@@ -66,12 +66,12 @@ public class HouseList {
     }
 
 
-    public String printAnotherHouse(Requirement r){
+    public String printAnotherHouse(Requirement r) {
         String house = " ";
         for (int i = 0; i < housesList.size(); i++) {
-            if(housesList.get(i).satisfies(r)) // check if houseList satisfies given requirement
+            if (housesList.get(i).satisfies(r)) // check if houseList satisfies given requirement
             {
-                int randomHouse = (int)(Math.random() * (housesList.size() - 1));
+                int randomHouse = (int) (Math.random() * (housesList.size() - 1));
                 house = housesList.get(randomHouse) + " ";// print every house that is satisfies given requirement
             }
         }

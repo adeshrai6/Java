@@ -117,10 +117,10 @@ public class House {
      * @param r
      *      the requirement of the argument
      ***********************************************************/
-    public boolean satisfies(Requirement r){
-        if((r.getMinimumPrice() <= getPrice() && r.getMaximumPrice() >= getPrice()) && //check price of the house
+    public boolean satisfies(Requirement r) {
+        if ((r.getMinimumPrice() <= getPrice() && r.getMaximumPrice() >= getPrice()) && //check price of the house
                 (r.getMinimumNumberOfBeds() <= getNumberOfBedrooms() && r.getMaximumNumberOfBeds() >= getNumberOfBedrooms()) && // check bedrooms
-                (r.getMinimumArea() <= getArea() && r.getMaximumArea() >= getArea())){ //check area
+                (r.getMinimumArea() <= getArea() && r.getMaximumArea() >= getArea())) { //check area
             return true;
         }
         return false;
