@@ -93,8 +93,8 @@ public class Shop implements Initializable {
     void calculate(ActionEvent event) {
 
         double total = Double.parseDouble(sandwich.getText()) + Double.parseDouble(dipCoffee.getText()) + Double.parseDouble(mochaLatte.getText())
-                + Double.parseDouble(scones.getText()) + Double.parseDouble(saleTax.getValue());
-        String string = "" + total ;
+                + Double.parseDouble(scones.getText());
+        String string = Double.toString(total + (total * (Double.parseDouble(saleTax.getValue())/100)));
         totalBill.setText(string);
     }
 

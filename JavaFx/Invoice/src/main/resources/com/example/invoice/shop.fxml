@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.invoice.Shop">
+<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.invoice.Shop">
     <children>
         <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="148.0" layoutY="40.0" prefHeight="38.0" prefWidth="205.0" text="Invoice Calculator" textAlignment="CENTER" textFill="#63c798">
             <font>
@@ -31,6 +31,12 @@
                 <Font size="18.0" />
             </font>
         </Label>
+        <Label alignment="CENTER_RIGHT" layoutX="107.0" layoutY="260.0" prefHeight="23.0" prefWidth="104.0" text="Sandwich:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="sandwich" layoutX="226.0" layoutY="260.0" />
         <TextField fx:id="scones" layoutX="226.0" layoutY="210.0" />
         <Label alignment="CENTER_RIGHT" layoutX="107.0" layoutY="360.0" prefHeight="23.0" prefWidth="104.0" text="Total Bill:">
             <font>
@@ -38,12 +44,6 @@
             </font>
         </Label>
         <TextField fx:id="totalBill" layoutX="226.0" layoutY="360.0" />
-        <Label alignment="CENTER_RIGHT" layoutX="107.0" layoutY="260.0" prefHeight="23.0" prefWidth="104.0" text="Sandwich:">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Label>
-        <TextField fx:id="sandwich" layoutX="226.0" layoutY="260.0" />
         <Label alignment="CENTER_RIGHT" layoutX="107.0" layoutY="310.0" prefHeight="23.0" prefWidth="104.0" text="Sale Tax:">
             <font>
                 <Font size="18.0" />
