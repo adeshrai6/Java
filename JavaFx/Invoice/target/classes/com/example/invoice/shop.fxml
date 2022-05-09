@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.invoice.Shop">
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="148.0" layoutY="40.0" prefHeight="38.0" prefWidth="205.0" text="Invoice Calculator" textAlignment="CENTER" textFill="#63c798">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER_RIGHT" layoutX="107.0" layoutY="110.0" prefHeight="23.0" prefWidth="104.0" text="Drip Coffee:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="dipCoffee" layoutX="226.0" layoutY="110.0" />
+        <Label layoutX="107.0" layoutY="162.0" prefHeight="23.0" prefWidth="104.0" text="Mocha Latte:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="mochaLatte" layoutX="226.0" layoutY="160.0" />
+        <Label alignment="CENTER_RIGHT" layoutX="107.0" layoutY="210.0" prefHeight="23.0" prefWidth="104.0" text="Scones:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="scones" layoutX="226.0" layoutY="210.0" />
+        <Label alignment="CENTER_RIGHT" layoutX="107.0" layoutY="360.0" prefHeight="23.0" prefWidth="104.0" text="Total Bill:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="totalBill" layoutX="226.0" layoutY="360.0" />
+        <Label alignment="CENTER_RIGHT" layoutX="107.0" layoutY="260.0" prefHeight="23.0" prefWidth="104.0" text="Sandwich:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="sandwich" layoutX="226.0" layoutY="260.0" />
+        <Label alignment="CENTER_RIGHT" layoutX="107.0" layoutY="310.0" prefHeight="23.0" prefWidth="104.0" text="Sale Tax:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="saleTax" layoutX="226.0" layoutY="310.0" onAction="#select" prefHeight="26.0" prefWidth="160.0" />
+        <Button layoutX="121.0" layoutY="458.0" mnemonicParsing="false" onAction="#calculate" prefHeight="26.0" prefWidth="104.0" text="Calculate">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="254.0" layoutY="458.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="104.0" text="Back">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
