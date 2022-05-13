@@ -1,6 +1,7 @@
 package com.example.invoice;
 
 import com.example.invoice.Account;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,8 +12,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,6 +51,8 @@ public class InvoiceController {
     @FXML
     void setSignIn (ActionEvent event)throws IOException {
 
+        loadWelcomeScreen();
+
         /******************************* User Account *******************************/
         ArrayList<Account> accountList = new ArrayList<>();
         accountList.add(new Account("moon", "moon"));
@@ -74,6 +80,21 @@ public class InvoiceController {
             error.setText("Wrong ID or Password");
             error.setTextFill(Color.RED);
 
+        }
+    }
+
+    private void loadWelcomeScreen() throws IOException{
+        try {
+          AnchorPane welcomePage = FXMLLoader.load(getClass().getResource("welcome.fxml"));
+
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(3), welcomePage);
+            fadeTransition.setFromValue(0);
+            fadeTransition.setToValue(1);
+            fadeTransition.setCycleCount(1);
+            fadeTransition.play();
+            stage.show();
+        }catch (NullPointerException e){
+            System.out.println("Sorry welcome page does not exit");
         }
     }
 
