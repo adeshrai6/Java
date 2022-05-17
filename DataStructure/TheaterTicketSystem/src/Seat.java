@@ -1,9 +1,14 @@
-public class Seat {
+public class Seat implements Comparable<Seat> {
     private final String seatNumber;
     private boolean reserve = false;
 
     public Seat(String seatNumber) {
         this.seatNumber = seatNumber;
+    }
+
+    @Override
+    public int compareTo(Seat seat) {
+        return this.seatNumber.compareToIgnoreCase(seat.getSeatNumber());
     }
 
     public boolean reserve(){
