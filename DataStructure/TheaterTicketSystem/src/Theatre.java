@@ -10,7 +10,7 @@ public class Theatre {
         int lastRow = 'A' + (numRows - 1);
         for (char row = 'A'; row <= lastRow; row++) {
             for (int seatNum = 1; seatNum <= seatsPerRow; seatNum++) {
-                Seat seat = new Seat(row + String.format("%02d", seatNum));
+                Seat seat = new Seat(row + String.format("%02d", seatNum), 10);
                 seats.add(seat);
             }
         }
@@ -37,10 +37,5 @@ public class Theatre {
         return requestedSeat.reserve();
     }
 
-    public void getSeats() {
-        for (Seat seat : seats) {
-            System.out.println(seat.getSeatNumber());
-        }
-    }
 
 }
