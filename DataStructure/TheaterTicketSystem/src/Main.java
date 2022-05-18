@@ -10,8 +10,7 @@ public class Main {
     }
     public static void printList(List<Seat> list) {
 
-        for (Seat seat :
-                list) {
+        for (Seat seat : list) {
             System.out.println(" " + seat.getSeatNumber());
         }
         System.out.println();

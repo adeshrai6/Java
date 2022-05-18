@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -37,5 +38,7 @@ public class Theatre {
         return requestedSeat.reserve();
     }
 
-
+    public Collection<Seat> getSeats() {
+        return seats;
+    }
 }
